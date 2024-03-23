@@ -1,0 +1,18 @@
+1)waleet address
+->waleet address
+->amount
+->parcentange
+->duration
+->limit
+->date and time
+->refral address
+--> post and get
+
+
+2)
+wakeet address
+amount
+date and time
+
+
+
