@@ -4,15 +4,15 @@
  * @author: Manthan Vaghasiya
  */
 
-const express = require("express");
-import bodyParser from "body-parser";
-import cors from "cors";
-import path from "path";
-import swaggerUi from "swagger-ui-express";
-import db from "./db";
-import swaggerJsDocsWeb from "./config/swagger/swagger-config-web";
-import logger from "morgan";
-import { failAction } from "./utilities/response";
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
+const swaggerUi = require('swagger-ui-express');
+const db = require('./db');
+const swaggerJsDocsWeb = require('./config/swagger/swagger-config-web');
+const logger = require('morgan');
+const { failAction } = require('./utilities/response');
 require("dotenv").config({ path: ".env" });
 
 /**Start import routes */
