@@ -210,7 +210,6 @@ cron.schedule('*/10 * * * * *', async () => {
         const teamCounts = await fetchUserData();
 
         // Process teamCounts for different thresholds
-        await processTeamCounts(teamCounts, 2, 100);
         await processTeamCounts(teamCounts, 25, 100);
         await processTeamCounts(teamCounts, 125, 500);
         await processTeamCounts(teamCounts, 600, 2500);
