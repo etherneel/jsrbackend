@@ -1,10 +1,11 @@
+
 {
   "name": "my-project",
   "version": "1.0.0",
   "description": "my first project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node -- app.js",
+    "start": "nodemon --exec node -- app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && babel . -d dist --ignore node_modules --out-dir dist && cp -R views dist",
     "serve": "NODE_ENV=production pm2 start dist/app.js --name=app",
@@ -43,7 +44,6 @@
     "request": "^2.88.2",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.4.0",
-    "url": "^0.11.0",
-    "type": "module"
+    "url": "^0.11.0"
   }
 }
