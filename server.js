@@ -16,7 +16,9 @@ const { failAction } = require('./utilities/response');
 require("dotenv").config({ path: ".env" });
 
 /**Start import routes */
-import webRoutes from "./api/v1/web";
+const webRoutes = require("./api/v1/web");
+
+
 /**End import routes */
 
 //crone
@@ -51,6 +53,7 @@ const port = process.env.PORT ? process.env.PORT : 8000;
       extended: true,
     })
   );
+
 
   app.use(express.static(path.join(__dirname, "public")));
   var options = {};

@@ -4,17 +4,16 @@
  * @author: Manthan Vaghasiya
  */
 import { Router } from "express";
-const app = Router();
+
+const router = Router();
 
 import contractor from "./contractor";
 import customer from "./customer";
 import user from "./user";
 
 /*********** Combine all Routes ********************/
-app.use("/contractor", contractor);
-app.use("/customer", customer);
-app.use("/user", user);
+router.use("/contractor", contractor);
+router.use("/customer", customer);
+router.use("/user", user);
 
-
-
-export default app;
+module.exports = router;
