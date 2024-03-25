@@ -3,6 +3,8 @@
  * @description: It Contain db setup function.
  * @author: Manthan Vaghasiya
  */
+require = require("esm")(module /*, options*/);
+
 const mongoose = require("mongoose");
 
 

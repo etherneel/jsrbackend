@@ -3,6 +3,7 @@
  * @description: It Contain server setup functions.
  * @author: Manthan Vaghasiya
  */
+require = require("esm")(module /*, options*/);
 
 const express = require('express');
 const bodyParser = require('body-parser');
