@@ -3,8 +3,9 @@
  * @description: It Contain db setup function.
  * @author: Manthan Vaghasiya
  */
+const mongoose = require("mongoose");
 
-import mongoose from "mongoose";
+
 
 /* development connection string */
 const databaseUrl = process.env.ATLAS_URL;

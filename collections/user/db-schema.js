@@ -4,7 +4,7 @@
  * @author: Manthan Vaghasiya
  */
 
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
     firstName: { type: String },
     walletAddress:{ type: String },

@@ -4,7 +4,8 @@
  * @author: Manthan Vaghasiya
  */
 
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
+
 const rewardamountSchema = new mongoose.Schema({
     firstName: { type: String },
     walletAddress:{ type: String },

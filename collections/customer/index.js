@@ -3,7 +3,8 @@
  * @author Manthan Vaghasiya
  * @since Saturday, May 28, 2022
  */
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+
 import dbSchema from "./db-schema";
 
 class customerClass {
