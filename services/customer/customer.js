@@ -45,47 +45,47 @@ export const addCustomer = async (req) => {
   
 };
 
-export const onLogin = async (req, res, next) => {
-  const payload = req.body;
+// export const onLogin = async (req, res, next) => {
+//   const payload = req.body;
 
-  let userData = await customerModel.findOneQuery({
-    email: payload.email.toLowerCase(),
-    isDeleted: false,
-  });
-  if (!userData) throw new Error("Email not exists");
+//   let userData = await customerModel.findOneQuery({
+//     email: payload.email.toLowerCase(),
+//     isDeleted: false,
+//   });
+//   if (!userData) throw new Error("Email not exists");
 
-  let match = await decryptPassword(payload.password, userData.password);
-  if (!match) throw new Error("Password Invalid");
-  if (userData.isMailVerified == false) throw new Error("Please verify email");
+//   let match = await decryptPassword(payload.password, userData.password);
+//   if (!match) throw new Error("Password Invalid");
+//   if (userData.isMailVerified == false) throw new Error("Please verify email");
  
-  if (userData?.loginToken) {
-    if (userData?.loginToken?.length >= 5) {
-      let rr = await customerModel.findByConditionAndUpdate(
-        { _id: userData["_id"] },
-        {
-          $pop: { loginToken: -1 },
-        },
-        { new: true }
-      );
-    }
-  }
+//   if (userData?.loginToken) {
+//     if (userData?.loginToken?.length >= 5) {
+//       let rr = await customerModel.findByConditionAndUpdate(
+//         { _id: userData["_id"] },
+//         {
+//           $pop: { loginToken: -1 },
+//         },
+//         { new: true }
+//       );
+//     }
+//   }
 
  
-  const data = await customerModel.onLoginDoneFn(userData._id, {
+//   const data = await customerModel.onLoginDoneFn(userData._id, {
 
-    token: await generateJwtTokenFn({
-      userId: userData["_id"],
-    }),
-    });
-  res.setHeader("Access-Control-Expose-Headers", "token");
-  res.setHeader("token", data.loginToken[data.loginToken.length - 1].token);
+//     token: await generateJwtTokenFn({
+//       userId: userData["_id"],
+//     }),
+//     });
+//   res.setHeader("Access-Control-Expose-Headers", "token");
+//   res.setHeader("token", data.loginToken[data.loginToken.length - 1].token);
 
 
-  return {
-    email: data.email,
-    lastLogin: data.lastLoginDate,
-   };
-};
+//   return {
+//     email: data.email,
+//     lastLogin: data.lastLoginDate,
+//    };
+// };
 
 
 /*************************** addContractor ***************************/
