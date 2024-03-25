@@ -29,4 +29,4 @@ mongoose.connect(
   }
 );
 
-export default mongoose;
+module.exports = mongoose;
