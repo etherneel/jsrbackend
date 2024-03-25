@@ -7,8 +7,10 @@ const mongoose = require("mongoose");
 
 
 
+
 /* development connection string */
-const databaseUrl = process.env.ATLAS_URL;
+// const databaseUrl = process.env.ATLAS_URL;
+const databaseUrl = "mongodb+srv://vaghasiyamanthan8:YPZS7SIewD7qcePf@jsr001.66gsqiu.mongodb.net/JSR";
 
 console.log("DB URL:", databaseUrl);
 // Mongoose setup with server
