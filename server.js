@@ -18,6 +18,7 @@ require("dotenv").config({ path: ".env" });
 
 /**Start import routes */
 const webRoutes = require("./api/v1/web");
+const connection = require("./db");
 
 
 /**End import routes */
@@ -95,6 +96,12 @@ const port = process.env.PORT ? process.env.PORT : 8000;
   );
 
   // app.listen(port, () => console.log(`Backend is running on port ${port}`));
-  app.listen(port, function () {
+  app.listen(port, async function () {
+    try {
+      await connection
+      console.log("connection established")
+    } catch (error) {
+      console.log(error)
+    }
     console.log(`Express server listening on port ${port} and worker ${process.pid}`)
   })
