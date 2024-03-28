@@ -17,7 +17,7 @@ const { failAction } = require('./utilities/response');
 require("dotenv").config({ path: ".env" });
 
 /**Start import routes */
-const webRoutes = require("./api/v1/web");
+// const webRoutes = require("./api/v1/web");
 const connection = require("./db");
 
 
@@ -69,7 +69,7 @@ const port = process.env.PORT ? process.env.PORT : 8000;
 
   /*********** All Routes ********************/
 
-  app.use("/api/v1", webRoutes);
+  // app.use("/api/v1", webRoutes);
   app.use((err, req, res, next) => {
     if (err && err.error && err.error.isJoi) {
       // we had a joi error, let's return a custom 400 json response
